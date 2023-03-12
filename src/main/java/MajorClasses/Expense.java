@@ -1,6 +1,8 @@
 package MajorClasses;
 
 
+import java.util.Objects;
+
 public class Expense {
     protected double expenseAmount;
     protected String expenseTime;
@@ -48,5 +50,20 @@ public class Expense {
         System.out.println(this.currencyType.toString() + this.expenseAmount + " ");
         System.out.println(this.expenseTime + " " + this.description);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        return Objects.equals(this.getDescription(), ((Expense) obj).getDescription())
+                && this.getExpenseAmount() == ((Expense) obj).getExpenseAmount()
+                && Objects.equals(this.getExpenseTime(), ((Expense) obj).getExpenseTime());
+    }
+
+
 }
 

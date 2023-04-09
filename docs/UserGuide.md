@@ -1,6 +1,6 @@
 # User Guide
 
-<!-- TOC -->
+##### Table of Contents
 * [User Guide](#user-guide)
   * [Introduction](#introduction)
   * [Quick Start](#quick-start)
@@ -17,7 +17,6 @@
     * [Exiting the program: `exit`](#exiting-the-program--exit)
   * [FAQ](#faq)
   * [Command Summary](#command-summary)
-<!-- TOC -->
 
 ## Introduction
 

@@ -89,7 +89,10 @@ public class ParserAccount {
     public static void initialize(Scanner in) {
         do {
             showToUser(MESSAGE_DIVIDER, ACCOUNT_MESSAGE, MESSAGE_DIVIDER);
-            String input = in.nextLine();
+            String input = "";
+            if (in.hasNextLine()) {
+                input = in.nextLine();
+            }
             if (input.equals("login")) {
                 // get login details
                 caseLogIn(in);

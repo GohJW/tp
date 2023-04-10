@@ -55,10 +55,16 @@ public class CommandHelp extends Command {
         System.out.println("Example: find f");
         System.out.println(MESSAGE_DIVIDER);
 
-        System.out.println("Overview Command: Generate a monthly overview based on category," +
+        System.out.println("Monthly Overview Command: Generate a monthly overview based on category," +
                 " with expenses standardized in SGD");
         System.out.println("Format: overview [Month, should be the standard English Month Name] [Year]");
         System.out.println("Example: overview June 2021");
+        System.out.println(MESSAGE_DIVIDER);
+
+        System.out.println("Yearly Overview Command: Generate a yearly overview based on natural month," +
+                " with expenses standardized in SGD");
+        System.out.println("Format: overview [Year]");
+        System.out.println("Example: overview 2021");
         System.out.println(MESSAGE_DIVIDER);
 
         System.out.println("Exit Command: Exit the software with all your expenses stored automatically");

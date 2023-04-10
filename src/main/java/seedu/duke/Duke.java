@@ -10,7 +10,7 @@ import command.CommandSort;
 import command.CommandHelp;
 import command.CommandFind;
 
-import common.WelcomeMessage;
+import common.MessageList;
 import command.overview.CommandOverview;
 
 import data.Account;
@@ -28,8 +28,6 @@ public class Duke {
     protected Parser parser;
     protected ExpenseList expenseList;
     protected Currency currency;
-    protected String filePath = "expenses.json";
-
 
     /**
      * Initialize Duke and instantiate parser and account objects.
@@ -43,10 +41,10 @@ public class Duke {
     }
 
     public void run() {
-        WelcomeMessage.printLogo();
+        MessageList.printLogo();
         Scanner in = new Scanner(System.in);
         ParserAccount.initialize(in);
-        WelcomeMessage.welcomeHelper();
+        MessageList.welcomeHelper();
 
         String input = "";
         while (in.hasNextLine()) {

@@ -23,6 +23,10 @@ import static common.AccountMessage.IO_EXCEPTION_LOGIN_MESSAGE;
 import static common.AccountMessage.FAIL_READING_USERNAME_MESSAGE;
 import static common.AccountMessage.SAVED_MESSAGE;
 
+/**
+ * This class represents a user account and provides functionality for signup, login,
+ * and accessing the user's expense list.
+ */
 public class Account {
 
     public static ExpenseList account;
@@ -33,6 +37,12 @@ public class Account {
     private static String passwordHash;
     private static final Pattern USERNAME_PATTERN = Pattern.compile("[a-zA-Z0-9]+");
 
+    /**
+     * Constructs a new Account object with the specified account name and password.
+     *
+     * @param accountName The name of the user's account.
+     * @param password The user's password.
+     */
     public Account(String accountName, String password) {
         this.accountName = accountName;
         this.passwordHash = hashPassword(password);
@@ -50,17 +60,39 @@ public class Account {
         }
     }
 
+    /**
+     * Returns the name of the user's account.
+     *
+     * @return The name of the user's account.
+     */
     public String getAccountName() {
         return this.accountName;
     }
+
+    /**
+     * Returns the hashed version of the user's password.
+     *
+     * @return The hashed version of the user's password.
+     */
     public String getPasswordHash() {
         return passwordHash;
     }
 
+    /**
+     * Returns the user's expense list.
+     *
+     * @return The user's expense list.
+     */
     public ExpenseList getExpenseList() {
         return account;
     }
 
+    /**
+     * Signs up the user with the given account name and password. Writes the user's login
+     * information to a file and creates a new file for storing the user's expense list.
+     *
+     * @return A message indicating whether the signup was successful or if there was an error.
+     */
     public String signup() {
         // Check if username contains special characters
         if (!USERNAME_PATTERN.matcher(accountName).matches()) {
@@ -84,6 +116,12 @@ public class Account {
         }
     }
 
+    /**
+     * Attempts to log in the user with the account name and password associated
+     * with the account object.
+     *
+     * @return A message indicating the status of the log in attempt as a String.
+     */
     public String login() {
         boolean found = false;
         try {
@@ -113,6 +151,12 @@ public class Account {
         }
     }
 
+    /**
+     * Checks if the account name associated with the account object is already taken
+     * by another user.
+     *
+     * @return True if the account name is taken, false otherwise.
+     */
     private boolean isUsernameTaken() {
         try {
             BufferedReader br =
@@ -134,6 +178,12 @@ public class Account {
         }
     }
 
+    /**
+     * Hashes the specified password to string type
+     *
+     * @param password The password as a String.
+     * @return The hashed password as a String.
+     */
     private String hashPassword(String password) {
         // Restrict password to numbers only if hashing is not supported
         char[] passwordChars = password.toCharArray();
@@ -145,6 +195,12 @@ public class Account {
         return String.valueOf(passwordChars);
     }
 
+    /**
+     * Log out of the account and save the expense list associated with the account to a file with the
+     * file path of expensesStorageFilePath and clears the account's expense list.
+     *
+     * @return A message indicating that the expense list has been saved as a String.
+     */
     public static String saveLogOut() {
         storage.saveExpenses(expensesStorageFilePath);
         account.clear();
@@ -152,6 +208,10 @@ public class Account {
         return SAVED_MESSAGE;
     }
 
+    /**
+     * Auto-save the expense list associated with the account to a file with the
+     * file path of expensesStorageFilePath.
+     */
     public static void autoSave() {
         storage.saveExpenses(expensesStorageFilePath);
     }

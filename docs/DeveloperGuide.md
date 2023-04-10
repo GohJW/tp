@@ -3,14 +3,13 @@
 <!-- TOC -->
 * [Developer Guide](#developer-guide)
   * [Acknowledgements](#acknowledgements)
-  * [Design & implementation](#design--implementation)
   * [Design](#design)
   * [Account Implementation](#account-implementation)
     * ['Login' Feature](#login-feature)
     * ['Signup' Feature](#signup-feature)
     * ['Logout' Feature](#logout-feature)
     * ['Exit' Feature (Outside the Account)](#exit-feature-outside-the-account)
-  * [Implementation](#implementation)
+  * [Feature Implementation](#feature-implementation)
     * ['List' Feature](#list-feature)
     * ['Add' Feature](#add-feature)
     * ['Delete' Feature](#delete-feature)
@@ -87,6 +86,7 @@ it in the type of ExpenseList.
 - `Storage#checkValidExpenseList(expenses, filePath)` -- Checking if the expenseList read from the json file is valid,
 which helps to detect any data changes in the file or file corruption.
 Given below is an example usage of the feature. 
+
 ![](diagrams/LoginFeature.png)
 
 Step 1. The user executes `login` command to log in to his / her account. `Duke` then calls `ParserAccount#initialize()`
@@ -181,7 +181,6 @@ This mechanism is facilitated by `ParserAccount`, with just a simple task - exit
 - `ParserAccount#initialize()` -- Call the `exit(0)` function to exit the program immediately when the user typed `exit`
 before logged in or after logged out.
 
-<div style="page-break-after: always;"></div>
 
 ## Feature Implementation
 
@@ -357,6 +356,8 @@ what are they and how many of them. Then return to Duke.
 Step 3. If neither the above two conditions, it will call `CommandCategory#displayAllCategory` with mechanism mentioned above, and then it will call
 `CommandCategory#displayCorrespondingCategory`, which traverse the expense list and display all expenses with corresponding categories no matter the case sensitivity.
 
+<div style="page-break-after: always;"></div>
+
 ### 'Total' Feature
 
 This mechanism is facilitated by `CommandTotal`.
@@ -430,7 +431,6 @@ list that store the account data inside the 'account process'.
 - Our expense tracker is a simple program that allows users to track their expenses
 - With simple commands and ease of use, users are able to use our tracker with little to no experience.
 
-<div style="page-break-after: always;"></div>
 
 ## User Stories
 
@@ -449,7 +449,7 @@ list that store the account data inside the 'account process'.
 |   v2.1    |  user in Singapore  |         see an overview of my expenses in a particular year          |                                my monthly spending pattern.                                |
 |   v2.1    |        user         |           create my unique account with a strong password            |                         manage my expenses separately from others.                         | 
 |   v2.1    |        user         |                     log in to my account easily                      |                                    access my expenses.                                     | 
-|   v2.1    |        user         |           log out from my account when I finished using it           |                       be sure that others cannot access my expenses.                       | 
+|   v2.1    |        user         |           log out from my account when I finished using it           |                      | 
 |   v2.1    |        user         |  save my expense easily in case I close the program unintentionally  |                          be sure that I haven't lost my expenses.                          | 
 
 ## Non-Functional Requirements

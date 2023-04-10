@@ -20,6 +20,9 @@ import static common.AccountMessage.PASSWORD_LENGTH_ERROR_MESSAGE;
 import static common.AccountMessage.USERNAME_IS_TAKEN_MESSAGE;
 import static common.AccountMessage.SAVED_MESSAGE;
 
+/**
+ * Tests the correctness of Account signup, login, and logout function.
+ */
 public class AccountTest {
     private final String VALID_USERNAME = "validusername";
     private final String VALID_PASSWORD = "validpassword";

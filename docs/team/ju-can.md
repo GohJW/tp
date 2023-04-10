@@ -47,6 +47,7 @@ Link to RepoSense Code for detailed code contribution:
   - delete: PR [#67](https://github.com/AY2223S2-CS2113-T13-2/tp/pull/67)
   - monthly overview: PR [#100](https://github.com/AY2223S2-CS2113-T13-2/tp/pull/100)
   - yearly overview: PR [#167](https://github.com/AY2223S2-CS2113-T13-2/tp/pull/167)
+  - storage: PR [#169](https://github.com/AY2223S2-CS2113-T13-2/tp/pull/169)
 
 ### Review/mentoring contributions
 - Merged most of the Pull Requests after reviewing newly added code.
